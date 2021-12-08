@@ -29,13 +29,13 @@ namespace ExoConvertisseur
             string baseValues = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";            
             string result = "";
 
-            int modulo = 0;
+            long modulo = 0;
 
             while (value >= baseToConvert)
             {
-                modulo = (int)(value % baseToConvert);
+                modulo = value % baseToConvert;
                 value /= baseToConvert;
-                result = baseValues[modulo] + result;
+                result = baseValues[(int)modulo] + result;
             }
 
             result = baseValues[(int)value] + result;
